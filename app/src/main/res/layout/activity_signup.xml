@@ -52,7 +52,7 @@
                 android:imeOptions="actionUnspecified"
                 android:imeActionId="@+id/login"
                 android:textColor="#000000"
-                />
+                tools:ignore="InvalidImeActionId" />
 
         </android.support.design.widget.TextInputLayout>
 

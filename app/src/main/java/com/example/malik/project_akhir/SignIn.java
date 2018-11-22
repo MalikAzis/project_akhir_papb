@@ -7,12 +7,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignIn extends AppCompatActivity {
 
+    private static final String TAG="";
     private EditText inputEmail, inputPasword;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
@@ -97,6 +99,7 @@ public class SignIn extends AppCompatActivity {
                                         Toast.makeText(SignIn.this, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show();
                                     }
                                 } else {
+                                    Log.d(TAG, "singInWithEmail:Success");
                                     Intent intent = new Intent(SignIn.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
@@ -108,4 +111,5 @@ public class SignIn extends AppCompatActivity {
         });
 
     }
+
 }
